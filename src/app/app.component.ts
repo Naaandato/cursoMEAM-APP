@@ -10,10 +10,11 @@ import { User } from "./models/user";
   providers: [UserService]
 })
 export class AppComponent implements OnInit{
-  title = 'Musify';
-  user: User;
-  identity = false;
-  token;
+  public title = 'Musify';
+  public user: User;
+  public identity = false;
+  public token;
+  public errorMessage;
 
   constructor(
     private _userService:UserService
@@ -27,5 +28,20 @@ export class AppComponent implements OnInit{
 
   public onSubmit() {
     console.log(this.user);
+
+    this._userService.signup(this.user).subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        var errorMessage = <any>error;
+
+        if(errorMessage != null){
+          var body = JSON.parse(error._body);
+          this.errorMessage = body.message;
+
+        }
+      }
+    );
   }
 }
