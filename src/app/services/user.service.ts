@@ -23,10 +23,17 @@ export class UserService{
 
     let json = JSON.stringify(user_to_login);
     let params = json;
-
     let headers = new Headers({'Content-Type':'application/json'});
 
     return this._http.post(this.url+'login', params, {headers: headers}).map(res => res.json());
+
+  }
+
+  register(userToRegister){
+    let params = JSON.stringify(userToRegister);
+    let headers = new Headers({'Content-Type':'application/json'});
+
+    return this._http.post(this.url+'register', params, {headers: headers}).map(res => res.json());
 
   }
 
