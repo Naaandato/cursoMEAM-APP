@@ -1,0 +1,15 @@
+
+.user_image {
+  background: #eee;
+  border-radius: 100px;
+  width: 57px;
+  height: 57px;
+  margin: 0px auto;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+
+.user_image img{
+  width: 57px;
+}

@@ -37,6 +37,17 @@ export class UserService{
 
   }
 
+  updateUser(userToUpdate){
+    let params = JSON.stringify(userToUpdate);
+    let headers = new Headers({
+      'Content-Type':'application/json',
+      'Authorization': this.getToken()
+    });
+
+    return this._http.put(this.url+'update-user/' + userToUpdate._id, params, {headers: headers}).map(res => res.json());
+
+  }
+
   getIdentity(){
     let identity = JSON.parse(localStorage.getItem('identity'));
 

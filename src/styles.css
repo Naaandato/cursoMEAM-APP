@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+html, body{
+  margin: 0px;
+  height: 100%;
+  background: #eee;
+}
+
+.head-title{
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  display: block;
+}
+
+.navigation{
+  text-align: center;
+  color: white;
+  background: #1C1C1F;
+  height: 100%;
+}
+
+.navigation a{
+  color: #ddd;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+  text-decoration: none;
+}
+
+.navigation a:hover{
+  color: white;
+}
+
+.navigation .glyphicon{
+  font-size: 25px;
+  display: block;
+  width: 100%;
+}
+
+#user_logged{
+  background: #1C1C1F;
+  position: absolute;
+  bottom: 0px;
+  border-top: 1px solid #444;
+  width: 75%;
+  padding-top: 20px;
+}
+
+#user_logged .glyphicon-log-out{
+  font-size: 16px;
+}
+
+.btn-logout{
+  cursor: pointer;
+}
+
+
